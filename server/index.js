@@ -8,7 +8,6 @@ app.get("/products", async (req, serverResponse) => {
   var url = "https://run.mocky.io/v3/05e9651d-528e-4d7c-a60b-bae8f09684c6";
   const externalApiResponse = await fetch(url);
   const jres = await externalApiResponse.json();
-  // console.log(jres);
   serverResponse.send(jres);
 });
 
