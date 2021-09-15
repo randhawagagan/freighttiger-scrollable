@@ -1,0 +1,1 @@
+export const PRODUCTS_CACHE = "PRODUCTS_CACHE";

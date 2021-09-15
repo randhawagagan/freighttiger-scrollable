@@ -1,25 +1,38 @@
-import { React, useState, useEffect } from "react";
+import { React, useEffect } from "react";
 import Product from "../Product";
 import "./styles.css";
+import { connect } from "react-redux";
+import { addToCartAction } from "../../redux/actions/cartActions";
+import { loadItems } from "../../redux/actions/listActions";
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
+const ProductList = ({ products, loadItems }) => {
   useEffect(() => {
-    async function fetchData() {
-      const response = await fetch("/products");
-      const json = await response.json();
-      setProducts(json.products);
-    }
-    fetchData();
+    loadItems();
   }, []);
 
+  console.log(products);
+  const { paginatedList } = products;
   return (
     <ul className="productlist-container" type="none">
-      {products &&
-        products.map((product) => (
-          <Product key={product.productId} {...product} />
-        ))}
+      {paginatedList &&
+        paginatedList.map((product, i) => {
+          return <Product key={product.productId} {...product} />;
+        })}
+      {/* <div ref={}></div> */}
+      {/* if (i === paginatedList.length - 1) {
+           // return Sentinal
+          } */}
     </ul>
   );
 };
-export default ProductList;
+function mapStateToProps(state) {
+  return {
+    products: state.products,
+  };
+}
+const mapDispatchToProps = {
+  addToCartAction,
+  loadItems,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
