@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from "react";
-import history from "../../utils/history";
+import Product from "../Product";
+import "./styles.css";
 
 const ProductList = () => {
-  
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchData() {
@@ -14,13 +14,12 @@ const ProductList = () => {
   }, []);
 
   return (
-  <div>
-  {products.map( (product) =>{
-    return <div key={product.productId}>
-         <button onClick={()=> history.push('/cart')} >Add to cart</button>
-         {product.productId}</div>;
-  })}
-  </div>
-  )
-}
+    <ul className="productlist-container" type="none">
+      {products &&
+        products.map((product) => (
+          <Product key={product.productId} {...product} />
+        ))}
+    </ul>
+  );
+};
 export default ProductList;

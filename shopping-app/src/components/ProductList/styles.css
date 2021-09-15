@@ -1,0 +1,6 @@
+.productlist-container {
+  display: flex;
+  padding: 90px;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+}
