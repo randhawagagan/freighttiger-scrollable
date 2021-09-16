@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import "./styles.css";
 import { connect } from "react-redux";
 import { loadItems } from "../../redux/actions/listActions";
-import Scrollable from "../Scrollable";
+import Scrollable from "../../components/Scrollable";
 
 const ProductList = ({ products, loadItems }) => {
   useEffect(() => {

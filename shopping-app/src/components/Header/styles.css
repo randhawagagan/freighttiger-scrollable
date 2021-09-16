@@ -1,13 +1,28 @@
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
   top: 0;
   position: sticky;
   width: 100%;
   z-index: 1;
+}
+
+.image-container {
+  width: 35px;
+  height: 39px;
+  float: left;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+}
+
+.header-text {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
 }
