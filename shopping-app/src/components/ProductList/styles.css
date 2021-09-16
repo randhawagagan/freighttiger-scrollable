@@ -1,6 +1,6 @@
 .productlist-container {
   display: flex;
-  padding: 90px;
+  padding: 1rem 5rem 1rem 5rem;
   /* flex-direction: column; */
   flex-wrap: wrap;
 }

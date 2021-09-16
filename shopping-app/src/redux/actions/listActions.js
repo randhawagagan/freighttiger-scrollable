@@ -5,12 +5,12 @@ export function loadCoursesSuccess(products) {
   return { type: types.LOAD_PRODUCTS_SUCCESS, products };
 }
 
-function getFromCache(key) {
-  return JSON.parse(window.localStorage.getItem(key));
+export function loadNextPageOnScroll(page) {
+  return { type: types.LOAD_NEXT_ON_SCROLL, page };
 }
 
-function setToCache(key, value) {
-  return window.localStorage.setItem(key, JSON.stringify(value));
+export function increment_pagenumber(page) {
+  return { type: types.INCREMENT_PAGENUMBER, page };
 }
 
 export function loadItems() {
@@ -31,4 +31,13 @@ export function loadItems() {
         throw e;
       });
   };
+}
+
+/* Set up a localStorage for API cache so that API from node is called only once  */
+export function getFromCache(key) {
+  return JSON.parse(window.localStorage.getItem(key));
+}
+
+function setToCache(key, value) {
+  return window.localStorage.setItem(key, JSON.stringify(value));
 }
