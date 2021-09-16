@@ -16,7 +16,7 @@ export default function loadProductsReducer(
     case types.ADD_TO_CART:
       return {
         ...state,
-        cart: action.item,
+        cart: [...state.cart, action.item],
       };
     default:
       return state;

@@ -6,8 +6,15 @@ import { connect } from "react-redux";
 import { addToCartAction } from "../../redux/actions/listActions";
 
 const Product = (props) => {
-  const { productName, brand, price, gender, primaryColour, searchImage } =
-    props;
+  const {
+    productName,
+    brand,
+    price,
+    gender,
+    primaryColour,
+    searchImage,
+    addToCartAction,
+  } = props;
 
   const handleCartClick = (event) => {
     event.preventDefault();
@@ -45,4 +52,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);
-// export default Product;
