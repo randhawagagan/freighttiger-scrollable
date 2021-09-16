@@ -13,6 +13,10 @@ export function increment_pagenumber(page) {
   return { type: types.INCREMENT_PAGENUMBER, page };
 }
 
+export function addToCartAction(item) {
+  return { type: types.ADD_TO_CART, item };
+}
+
 export function loadItems() {
   return function (dispatch) {
     const cachedVal = getFromCache(CONSTANTS.PRODUCTS_CACHE);

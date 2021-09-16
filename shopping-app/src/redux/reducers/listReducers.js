@@ -3,10 +3,7 @@ import * as types from "../actions/actionTypes";
 export default function loadProductsReducer(
   state = {
     list: [],
-    page: 1,
-    paginatedList: [],
-    hasNextPage: true,
-    isNextPageLoading: false,
+    cart: [],
   },
   action
 ) {
@@ -15,6 +12,11 @@ export default function loadProductsReducer(
       return {
         ...state,
         list: action.products.products,
+      };
+    case types.ADD_TO_CART:
+      return {
+        ...state,
+        cart: action.item,
       };
     default:
       return state;

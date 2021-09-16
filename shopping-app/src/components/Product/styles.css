@@ -43,12 +43,23 @@
 }
 
 .addToCart {
+  cursor: pointer;
+  border: 1px solid #115dd8;
+  padding: 10px 20px;
+  border-radius: 200px;
+  color: #fff;
+  background: #115dd8;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  transition: 200ms;
   float: right;
-  background-color: #24a0ed;
-  color: white;
-  font-size: 12px;
-  border-radius: 4px;
-  padding: 5px;
-  border: 1px solid;
-  margin-top: 8px;
+}
+
+.addToCart :hover {
+  background: #fff;
+  color: #115dd8;
+}
+
+.button-container {
+  margin-top: 1rem;
 }

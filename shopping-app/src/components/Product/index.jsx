@@ -1,14 +1,20 @@
 import React from "react";
 import history from "../../utils/history";
 import "./styles.css";
-const Product = ({
-  productName,
-  brand,
-  price,
-  gender,
-  primaryColour,
-  searchImage,
-}) => {
+import * as CONSTANTS from "../../utils/constants";
+import { connect } from "react-redux";
+import { addToCartAction } from "../../redux/actions/listActions";
+
+const Product = (props) => {
+  const { productName, brand, price, gender, primaryColour, searchImage } =
+    props;
+
+  const handleCartClick = (event) => {
+    event.preventDefault();
+    history.push(CONSTANTS.CART_ROUTE);
+    addToCartAction(props);
+  };
+
   return (
     <li className="product-container">
       <img src={searchImage} alt="product" className="image-resize" />
@@ -20,12 +26,23 @@ const Product = ({
           <span className="product_gender">Gender:{gender}</span>
           <span className="product_gender">Color:{primaryColour}</span>
         </div>
-        <button className="addToCart" onClick={() => history.push("/cart")}>
+      </div>
+      <div className="button-container">
+        <button className="addToCart" onClick={handleCartClick}>
           Add to cart
         </button>
       </div>
     </li>
   );
 };
+function mapStateToProps(state) {
+  return {
+    cart: state.products.cart,
+  };
+}
+const mapDispatchToProps = {
+  addToCartAction,
+};
 
-export default Product;
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
+// export default Product;
