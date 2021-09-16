@@ -10,9 +10,9 @@ const store = configureStore();
 
 ReactDOM.render(
   <ReduxProvider store={store}>
-    {/* <React.StrictMode> */}
-    <App />
-    {/* </React.StrictMode> */}
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   </ReduxProvider>,
   document.getElementById("root")
 );

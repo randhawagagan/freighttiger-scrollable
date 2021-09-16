@@ -33,7 +33,7 @@ export function loadItems() {
   };
 }
 
-/* Set up a localStorage for API cache so that API from node is called only once  */
+/* Set up a localStorage for API cache so that API from nodejs server is called only once  */
 export function getFromCache(key) {
   return JSON.parse(window.localStorage.getItem(key));
 }

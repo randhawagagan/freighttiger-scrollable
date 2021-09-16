@@ -2,7 +2,6 @@ import React from "react";
 import history from "../../utils/history";
 import "./styles.css";
 const Product = ({
-  productId,
   productName,
   brand,
   price,

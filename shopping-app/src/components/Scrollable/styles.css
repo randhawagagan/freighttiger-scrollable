@@ -1,0 +1,5 @@
+.scrollable-flex {
+  display: flex;
+  flex-direction: unset;
+  flex-wrap: wrap;
+}
