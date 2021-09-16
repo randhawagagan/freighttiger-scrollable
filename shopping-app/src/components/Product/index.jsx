@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import history from "../../utils/history";
 import "./styles.css";
 import * as CONSTANTS from "../../utils/constants";
@@ -10,7 +10,7 @@ const Product = (props) => {
     productName,
     brand,
     price,
-    gender,
+
     primaryColour,
     searchImage,
     addToCartAction,
@@ -24,14 +24,22 @@ const Product = (props) => {
 
   return (
     <li className="product-container">
-      <img src={searchImage} alt="product" className="image-resize" />
+      <img
+        src={searchImage}
+        alt="product"
+        className="image-resize"
+        loading="lazy"
+      />
       <div className="meta-container">
         <span className="product_price">Rs.{price}</span>
         <span className="product_name">{brand}</span>
         <p>{productName}</p>
         <div className="extra-details">
-          <span className="product_gender">Gender:{gender}</span>
-          <span className="product_gender">Color:{primaryColour}</span>
+          {/* <span className="product_gender">Gender:{gender}</span> */}
+          <span className="product_gender">
+            Color:
+            <span style={{ color: { primaryColour } }}>{primaryColour}</span>
+          </span>
         </div>
       </div>
       <div className="button-container">

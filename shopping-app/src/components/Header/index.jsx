@@ -24,7 +24,6 @@ const Header = () => {
           {location.pathname === CONSTANTS.HOME_ROUTE ? "Fresh Stock" : "Cart"}
         </div>
       </header>
-      ;
     </>
   );
 };
