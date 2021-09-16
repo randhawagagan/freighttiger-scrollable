@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/freighttiger-scrollable/static/css/main.6dd605b0.chunk.css",
-    "main.js": "/freighttiger-scrollable/static/js/main.cd7a1f9a.chunk.js",
-    "main.js.map": "/freighttiger-scrollable/static/js/main.cd7a1f9a.chunk.js.map",
+    "main.js": "/freighttiger-scrollable/static/js/main.e5434631.chunk.js",
+    "main.js.map": "/freighttiger-scrollable/static/js/main.e5434631.chunk.js.map",
     "runtime-main.js": "/freighttiger-scrollable/static/js/runtime-main.9153a7d7.js",
     "runtime-main.js.map": "/freighttiger-scrollable/static/js/runtime-main.9153a7d7.js.map",
     "static/js/2.e2121797.chunk.js": "/freighttiger-scrollable/static/js/2.e2121797.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9153a7d7.js",
     "static/js/2.e2121797.chunk.js",
     "static/css/main.6dd605b0.chunk.css",
-    "static/js/main.cd7a1f9a.chunk.js"
+    "static/js/main.e5434631.chunk.js"
   ]
 }
