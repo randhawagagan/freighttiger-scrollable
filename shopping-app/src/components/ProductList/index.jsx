@@ -1,5 +1,4 @@
 import { React, useEffect } from "react";
-import Product from "../Product";
 import "./styles.css";
 import { connect } from "react-redux";
 import { addToCartAction } from "../../redux/actions/cartActions";
@@ -7,7 +6,7 @@ import {
   loadItems,
   loadNextPageOnScroll,
 } from "../../redux/actions/listActions";
-import { useVisibilityHook } from "react-observer-api";
+import Scrollable from "../Scrollable";
 
 const ProductList = ({
   products,
@@ -19,28 +18,48 @@ const ProductList = ({
     loadItems();
   }, [loadItems]);
 
-  const { setElement, isVisible } = useVisibilityHook();
+  // const { setElement, isVisible } = useVisibilityHook();
 
-  useEffect(() => {
-    if (isVisible & (pageNumber < 5)) {
-      loadNextPageOnScroll(pageNumber + 1);
-    }
-  }, [isVisible]);
+  // useEffect(() => {
+  //   if (isVisible & (pageNumber < 5)) {
+  //     loadNextPageOnScroll(pageNumber + 1);
+  //   }
+  // }, [isVisible]);
 
   console.log(products);
-  const { paginatedList } = products;
-  const currentlistLength = paginatedList.length;
+  const { list } = products;
+  // const _loadNextPage = (...args) => {
+  //   console.log("loadNextPage", ...args);
+  //   // this.setState({ isNextPageLoading: true }, () => {
+  //   setTimeout(() => {
+  //     loadNextPageOnScroll();
+  //     // this.setState((state) => ({
+  //     //   hasNextPage: state.items.length < 100,
+  //     //   isNextPageLoading: false,
+  //     //   items: [...paginatedList],
+  //     // }));
+  //   }, 2500);
+  //   // });
+  // };
+
   return (
     <>
       <ul className="productlist-container" type="none">
-        {paginatedList &&
+        {/* {paginatedList &&
           paginatedList.map((product, index) => {
             return <Product key={product.productId} {...product} />;
-          })}
+          })} */}
+        {list && list.length > 0 && <Scrollable data={list} />}
       </ul>
-      <div ref={setElement}>
-        {isVisible && <h1>Fetching more list items...</h1>}
-      </div>
+
+      {/* {paginatedList && paginatedList.length > 0 && (
+        <ProductScrollable
+          hasNextPage={hasNextPage}
+          isNextPageLoading={isNextPageLoading}
+          items={paginatedList}
+          loadNextPage={_loadNextPage}
+        />
+      )} */}
     </>
   );
 };
