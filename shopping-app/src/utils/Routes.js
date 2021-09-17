@@ -10,8 +10,8 @@ const Routes = () => (
   <Router history={history}>
     <Header />
     <Switch>
-      <Route exact path="/" component={ProductList} />
-      <Route path="/cart" component={Cart} />
+      <Route exact path="/freighttiger-scrollable/" component={ProductList} />
+      <Route path="/freighttiger-scrollable/cart" component={Cart} />
       <Route component={PageNotFound} />
     </Switch>
   </Router>

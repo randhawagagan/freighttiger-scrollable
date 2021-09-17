@@ -9,7 +9,7 @@ const Header = () => {
   const location = useLocation();
   const backVisible = location.pathname === CONSTANTS.CART_ROUTE;
   const handleClick = () => {
-    history.push("/");
+    history.push(CONSTANTS.HOME_ROUTE);
   };
   return (
     <>
