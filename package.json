@@ -1,10 +1,14 @@
 {
   "name": "freighttiger-scrollable",
+  "homepage": "http://randhawagagan.github.io/freighttiger-scrollable",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build": "cd shopping-app && npm install && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d /Users/i339711/Documents/Work/freighttiger-scrollable/shopping-app/build"
   },
   "repository": {
     "type": "git",
@@ -16,9 +20,9 @@
   "bugs": {
     "url": "https://github.com/randhawagagan/freighttiger-scrollable/issues"
   },
-  "homepage": "https://github.com/randhawagagan/freighttiger-scrollable#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "gh-pages": "^3.2.3",
     "node-fetch": "^3.0.0",
     "request": "^2.88.2"
   },
